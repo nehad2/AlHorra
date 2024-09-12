@@ -4,6 +4,8 @@ import 'package:alhora_project/Pages/Search_page.dart';
 import 'package:flutter/material.dart';
 
 class Cards extends StatelessWidget {
+  const Cards({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CategoryGrid();
@@ -59,9 +61,11 @@ class CategoryGrid extends StatelessWidget {
     },
   ];
 
+  CategoryGrid({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _searchController = TextEditingController();
+    final TextEditingController searchController = TextEditingController();
 
     return Scaffold(
 
@@ -79,7 +83,7 @@ class CategoryGrid extends StatelessWidget {
             padding: const EdgeInsets.only(top: 6.0),
             child: TextField(
              
-              controller: _searchController,
+              controller: searchController,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: 'Search',

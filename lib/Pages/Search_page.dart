@@ -7,7 +7,7 @@ class SearchPage extends StatelessWidget {
   final String imagePath;
   final Color backgroundColor;
   const SearchPage(
-      {required this.title,
+      {super.key, required this.title,
       required this.imagePath,
       required this.backgroundColor});
 

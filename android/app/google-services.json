@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "382701753480",
+    "project_id": "alhorra-0",
+    "storage_bucket": "alhorra-0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382701753480:android:7e388378a1a556d7cffb3d",
+        "android_client_info": {
+          "package_name": "com.alhorra.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEKkUOuFB5snloK8tyYJLaX7kKE60ivn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

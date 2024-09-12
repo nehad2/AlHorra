@@ -3,7 +3,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -107,6 +106,7 @@ class _DashboardPageState extends State<DashboardPage> {
   );
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Center(
           child: Text(
             'Trending 🔥',

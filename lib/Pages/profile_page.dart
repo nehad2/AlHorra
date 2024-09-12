@@ -2,11 +2,13 @@
 
 import 'dart:ui';
 
+import 'package:alhora_project/Pages/Settings/settings_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'dashboard_page.dart';
 
 class ProfilePage extends StatefulWidget {
-  ProfilePage({super.key});
+  const ProfilePage({super.key});
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -51,9 +53,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         image: new ExactAssetImage('Assets/Images/carpic.png'),
                         fit: BoxFit.cover,
                       ),
-                      borderRadius:
-                          new BorderRadius.all(new Radius.circular(30)),
-                      border: new Border.all(
+                      borderRadius: new BorderRadius.all(Radius.circular(30)),
+                      border: Border.all(
                         color: Colors.transparent,
                       ),
                     ),
@@ -107,42 +108,65 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       endDrawer: Drawer(
         
-      
         child: ListView(
+          
           children: [
             ListTile(
-              title: Text('Account'),
-              subtitle: Text('Home Page'),
-              trailing: Icon(Icons.home),
+              title: Text(
+                'Setting',
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+              trailing: Icon(
+                Icons.settings_outlined,
+                size: 33,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()),
+                );
+              },
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Divider(
                 thickness: 1,
-                
               ),
             ),
             ListTile(
-              title: Text('Setting'),
-              subtitle: Text('About Page'),
-              trailing: Icon(Icons.info),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
-              child: Divider(
-                thickness: 1,
-                
+              title: Text(
+                'Contact',
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+              trailing: Icon(
+                Icons.contact_support_outlined,
+                size: 33,
               ),
             ),
-            
-           
-            
-            ListTile(
-                title: Text('Contact'),
-                subtitle: Text('Contact Page'),
-                trailing: Icon(Icons.contact_phone),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Divider(
+                thickness: 1,
+              ),
             ),
-            
+            ListTile(
+              title: Text('Logout',
+              style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),),
+              trailing: Icon(Icons.logout_rounded,
+              size: 33,),
+              onTap: () {
+                FirebaseAuth.instance.signOut();
+              },
+            ),
           ],
         ),
       ),
